@@ -2,20 +2,24 @@
 
 | Arquivo | O que é |
 |---|---|
-| [`banco-questoes-primeiro-semestre.docx`](banco-questoes-primeiro-semestre.docx) | Banco de questões de estudo das aulas 01 a 06, com gabarito no final |
-| [`guia_estudo_primeiro_semestre.docx`](guia_estudo_primeiro_semestre.docx) | Guia do que é cobrado em cada aula |
-| `Prova primeiro semestre.docx` · `prova-primeiro-semestre-gabarito.docx` | Prova e gabarito (protegidos por senha) |
+| [`proposta-seminario.docx`](proposta-seminario.docx) | Proposta do seminário (S7 e S8): os dez transtornos, roteiro obrigatório, formato, entrega e rubrica |
+| [`referencia-seminario.docx`](referencia-seminario.docx) | Material de referência por transtorno: domínios, instrumentos, pontos de atenção e bibliografia de partida |
+| [`proposta-estudo-de-caso-meu-pai.docx`](proposta-estudo-de-caso-meu-pai.docx) | Proposta do trabalho final (S17): plano de reabilitação para o protagonista de *Meu Pai* (2020), estrutura e rubrica |
+| [`referencia-estudo-de-caso-meu-pai.docx`](referencia-estudo-de-caso-meu-pai.docx) | Guia de observação do filme por domínio, princípios para doença progressiva, modelo de tabela do plano e bibliografia |
+| [`banco-questoes-primeiro-bimestre.docx`](banco-questoes-primeiro-bimestre.docx) | Banco de questões das aulas 01 a 06 (30 questões), gabarito na última página |
+| [`banco-questoes-segundo-bimestre.docx`](banco-questoes-segundo-bimestre.docx) | Banco de questões das aulas 11 a 16 (30 questões), gabarito na última página |
 
-## Banco de questões
+## Bancos de questões
 
-Cinco questões por aula, 30 no total, de nível fácil a médio. As questões cobram a essência de
-cada aula, recortada pelo guia de estudo, e não os detalhes dos slides.
+Cinco questões por aula, da mais fácil para a mais difícil, variando o formato: assinale a
+correta, assinale a incorreta, verdadeiro ou falso, afirmativas I–IV, relacione as colunas e
+asserção-razão. O gabarito traz só a letra, sem comentário. As questões das provas cobram o mesmo
+núcleo, mas não repetem as do banco.
 
-Os formatos seguem o padrão da prova e do ENADE: assinale a correta, assinale a incorreta,
-verdadeiro ou falso, afirmativas I–IV, relacione as colunas e asserção-razão.
+## Notas
 
-O gabarito fica na última página e traz só a letra, sem comentário: o aluno confere a resposta e,
-se errou, volta à aula para encontrar o motivo.
+O peso do seminário e do plano na média de cada bimestre ficou em aberto nas rubricas (campo
+"peso na média do bimestre"), para ser definido no plano de ensino.
 
-Os bancos antigos, um por aula e com 18 questões comentadas cada, estão no histórico do git em
-`referencias/banco-de-questoes/`.
+Os documentos seguem o padrão da prova: cabeçalho com o logo, rodapé com o endereço, Arial.
+O material da ementa anterior está em [`../ementa-antiga/`](../ementa-antiga/).
