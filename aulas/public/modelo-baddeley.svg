@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="1000" height="360" role="img" aria-label="O modelo multicomponente de Baddeley: a central executiva no alto ligada por setas de mão dupla ao esboço visuoespacial, ao buffer episódico e à alça fonológica; abaixo, separados como sistemas cristalizados, a semântica visual, a memória episódica de longo prazo e a linguagem, cada uma ligada ao subsistema correspondente">
+  <style>
+    .exe { font-family: 'Source Sans 3','Segoe UI',system-ui,sans-serif; font-size: 21px; fill: #fdfdfb; }
+    .exs { font-family: 'Source Sans 3','Segoe UI',system-ui,sans-serif; font-size: 15px; fill: #b9c6da; }
+    .sub { font-family: 'Source Sans 3','Segoe UI',system-ui,sans-serif; font-size: 19px; fill: #1d3e6e; }
+    .des { font-family: 'Source Sans 3','Segoe UI',system-ui,sans-serif; font-size: 16px; fill: #4a4a45; }
+    .mlp { font-family: 'Source Sans 3','Segoe UI',system-ui,sans-serif; font-size: 16px; fill: #6b6b63; }
+    .zon { font-family: 'Source Sans 3','Segoe UI',system-ui,sans-serif; font-size: 14px; fill: #8a897e; letter-spacing: 0.12em; }
+  </style>
+
+  <defs>
+    <marker id="pE" viewBox="0 0 10 10" refX="9.5" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1d3e6e"/>
+    </marker>
+    <marker id="pS" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M10,0 L0,5 L10,10 Z" fill="#1d3e6e"/>
+    </marker>
+    <marker id="gE" viewBox="0 0 10 10" refX="9.5" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#9a998e"/>
+    </marker>
+    <marker id="gS" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="8" markerHeight="8" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M10,0 L0,5 L10,10 Z" fill="#9a998e"/>
+    </marker>
+  </defs>
+
+
+  <!-- central executiva -->
+  <rect x="332" y="12" width="380" height="62" rx="12" fill="#1d3e6e"/>
+  <text class="exe" x="522" y="42" text-anchor="middle">Central executiva</text>
+  <text class="exs" x="522" y="64" text-anchor="middle">atenção controlada · capacidade limitada</text>
+
+  <!-- setas de mão dupla da executiva para os três subsistemas -->
+  <g stroke="#1d3e6e" stroke-width="2" fill="none" marker-start="url(#pS)" marker-end="url(#pE)">
+    <path d="M 442 78 L 210 118"/>
+    <path d="M 522 78 L 522 118"/>
+    <path d="M 602 78 L 834 118"/>
+  </g>
+
+  <!-- os três subsistemas -->
+  <rect x="64" y="124" width="276" height="86" rx="10" fill="#e7ecf3" stroke="#1d3e6e" stroke-width="1.5"/>
+  <text class="sub" x="202" y="160" text-anchor="middle">Esboço visuoespacial</text>
+  <text class="des" x="202" y="188" text-anchor="middle">imagem, forma e posição</text>
+
+  <rect x="384" y="124" width="276" height="86" rx="10" fill="#e7ecf3" stroke="#1d3e6e" stroke-width="1.5"/>
+  <text class="sub" x="522" y="160" text-anchor="middle">Buffer episódico</text>
+  <text class="des" x="522" y="188" text-anchor="middle">amarra tudo num episódio</text>
+
+  <rect x="704" y="124" width="276" height="86" rx="10" fill="#e7ecf3" stroke="#1d3e6e" stroke-width="1.5"/>
+  <text class="sub" x="842" y="160" text-anchor="middle">Alça fonológica</text>
+  <text class="des" x="842" y="188" text-anchor="middle">som e fala, reciclados</text>
+
+  <!-- setas de mão dupla para os sistemas de longo prazo -->
+  <g stroke="#9a998e" stroke-width="1.5" fill="none" marker-start="url(#gS)" marker-end="url(#gE)">
+    <path d="M 202 214 L 202 252"/>
+    <path d="M 522 214 L 522 252"/>
+    <path d="M 842 214 L 842 252"/>
+  </g>
+
+  <rect x="64" y="256" width="276" height="62" rx="10" fill="#f5f4ee" stroke="#dcdbd3" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text class="mlp" x="202" y="293" text-anchor="middle">Semântica visual</text>
+
+  <rect x="384" y="256" width="276" height="62" rx="10" fill="#f5f4ee" stroke="#dcdbd3" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text class="mlp" x="522" y="293" text-anchor="middle">Memória episódica (MLP)</text>
+
+  <rect x="704" y="256" width="276" height="62" rx="10" fill="#f5f4ee" stroke="#dcdbd3" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text class="mlp" x="842" y="293" text-anchor="middle">Linguagem</text>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="1000" height="360" role="img" aria-label="Funil em quatro degraus: entre o quadro psiquiátrico que o idoso de fato tem e o que chega a ser diagnosticado há quatro filtros — apresentação atípica, comorbidade clínica, iatrogenia e subdiagnóstico">
+  <rect width="1000" height="360" fill="#fdfdfb"/>
+
+  <g font-family="'Source Sans 3','Segoe UI',system-ui,sans-serif">
+
+    <!-- Extremos: o que existe (esquerda) e o que é registrado (direita) -->
+    <text x="36" y="32" font-size="20" font-weight="600" fill="#1b1b19">O quadro que o idoso tem</text>
+    <text x="964" y="32" font-size="20" font-weight="600" fill="#8c2f2f" text-anchor="end">O que é diagnosticado</text>
+
+    <!-- Funil em degraus: cada filtro estreita o que passa. Centro em y=158. -->
+    <path d="M36 63 H222 L222 79 H408 L408 94 H594 L594 108 H780 L780 121 H964 V195 H780 L780 208 H594 L594 222 H408 L408 237 H222 L222 253 H36 Z"
+          fill="#e7ecf3" stroke="#93a9c6" stroke-width="2"/>
+
+    <!-- Sentido do fluxo, por baixo dos numerais -->
+    <g stroke="#1d3e6e" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.3">
+      <path d="M52 158 H944"/>
+      <path d="M930 148 l14 10 -14 10"/>
+    </g>
+
+    <!-- Os quatro filtros: linha tracejada que atravessa o funil e aponta o rótulo -->
+    <g stroke="#1d3e6e" stroke-width="2.5" stroke-dasharray="8 6">
+      <path d="M222 63 V270"/>
+      <path d="M408 79 V270"/>
+      <path d="M594 94 V270"/>
+      <path d="M780 108 V270"/>
+    </g>
+
+    <!-- Numerais -->
+    <g text-anchor="middle" font-size="18" font-weight="700">
+      <circle cx="222" cy="158" r="18" fill="#1d3e6e"/><text x="222" y="164" fill="#fdfdfb">1</text>
+      <circle cx="408" cy="158" r="18" fill="#1d3e6e"/><text x="408" y="164" fill="#fdfdfb">2</text>
+      <circle cx="594" cy="158" r="18" fill="#1d3e6e"/><text x="594" y="164" fill="#fdfdfb">3</text>
+      <circle cx="780" cy="158" r="18" fill="#1d3e6e"/><text x="780" y="164" fill="#fdfdfb">4</text>
+    </g>
+
+    <!-- Rótulos: só o nome do filtro. O detalhe de cada um está no slide anterior. -->
+    <g text-anchor="middle" fill="#1b1b19" font-size="22" font-weight="600">
+      <text x="222" y="300">Apresentação</text>
+      <text x="222" y="324">atípica</text>
+
+      <text x="408" y="300">Comorbidade</text>
+      <text x="408" y="324">clínica</text>
+
+      <text x="594" y="300">Iatrogenia</text>
+
+      <text x="780" y="300">Subdiagnóstico</text>
+    </g>
+
+  </g>
+</svg>

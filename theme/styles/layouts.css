@@ -1,0 +1,1118 @@
+/* =============================================================================
+   slidev-theme-fasm — layouts
+   -----------------------------------------------------------------------------
+   Um bloco por .vue de theme/layouts/. A moldura (cabeçalho, rodapé, trilha) vem
+   de base.css; aqui mora só a forma do corpo de cada layout.
+   ========================================================================== */
+
+/* ==================================================== aberturas e pontuação */
+
+/* ------------------------------------------------------------------ cover */
+
+.l-cover .frame-body { justify-content: center; }
+
+.l-cover .kicker { margin-bottom: 1.1rem; }
+
+.l-cover .t-display { max-width: 20ch; }
+
+/* A régua cheia da capa. Curta e grossa: uma assinatura, não um separador. */
+.cover-rule {
+  width: 4.5rem;
+  height: 4px;
+  background: var(--accent);
+  margin: 1.6rem 0 1.2rem;
+}
+
+/* ------------------------------------------------------------------- lead
+   Título embaixo à esquerda; o resto da página é ar. */
+
+.l-lead .lead-block {
+  flex: none;
+}
+
+/* A medida vai no PRÓPRIO título, não no bloco que o contém. `ch` é relativo à
+   fonte do elemento em que está escrito: num contêiner que herda o corpo (19px),
+   30ch dá ~285px, e um título de 58px simplesmente transborda essa caixa em vez
+   de quebrar — palavra longa não tem onde quebrar. Escrito aqui, 1ch é a largura
+   do algarismo da serifada no tamanho de exibição, que é o que "medida de
+   título" quer dizer. */
+.l-lead .t-display {
+  font-size: calc(var(--fs-display) * 1.12);
+  max-width: 22ch;
+}
+
+.l-lead .t-sub { margin-top: 0.75rem; }
+
+/* ---------------------------------------------------------------- section */
+
+.l-section .frame-body { justify-content: center; }
+
+.section-index {
+  font-size: calc(var(--fs-mega) * 0.62);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.l-section .t-section { max-width: 22ch; }
+
+/* -------------------------------------------------------------------- end */
+
+.l-end .frame-body {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.l-end .t-sub { margin-left: auto; margin-right: auto; }
+
+.end-rule {
+  width: 3rem;
+  height: 3px;
+  background: var(--accent);
+  margin: 0 auto 1.5rem;
+}
+
+.end-contact {
+  margin-top: 1.75rem;
+  font-size: var(--fs-small);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 650;
+  color: var(--accent);
+}
+
+/* -------------------------------------------------------------- statement */
+
+.l-statement .frame-body {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.statement-title {
+  max-width: 24ch;
+  margin-inline: auto;
+}
+
+.statement-body {
+  margin-top: 1.5rem;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.statement-body:empty { display: none; }
+
+/* ---------------------------------------------------------------- bigtype
+   Uma frase que preenche o slide. Peso alto e entrelinha fechada — é tipo como
+   imagem, não como texto corrido. */
+
+.l-bigtype .frame-body { justify-content: center; }
+
+.t-bigtype {
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-size: calc(var(--fs-display) * 1.35);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0;
+  max-width: 18ch;
+  text-wrap: balance;
+}
+
+.t-bigtype em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.l-bigtype .t-sub { margin-top: 1.25rem; }
+
+/* ------------------------------------------------------------------ quote */
+
+.l-quote .frame-body { justify-content: center; }
+
+/* As aspas são desenhadas fora da coluna de texto: a primeira linha da citação
+   fica alinhada com as demais, em vez de recuada pela marca de abertura.
+
+   A citação ocupa a LARGURA INTEIRA do slide. Antes havia um `max-width: 34ch`
+   aqui, e ele fazia duas coisas erradas ao mesmo tempo: o `ch` era medido na
+   fonte deste bloco (a sem serifa do corpo), não na serifada em que a citação é
+   de fato composta, e o resultado era uma coluna estreita encostada na margem
+   esquerda com metade do slide vazia à direita — o slide parecia desalinhado.
+   Sem a trava, a medida de leitura passa a ser governada pelo tamanho do texto
+   (abaixo), que é o lugar certo dela num bloco de uma frase só. */
+.quote-mark {
+  position: relative;
+  padding-left: 3.75rem;
+  margin: 0;
+}
+
+.quote-mark::before {
+  content: '\201C';
+  position: absolute;
+  left: 0;
+  top: -0.3em;
+  font-family: var(--font-display);
+  font-size: 6.5rem;
+  line-height: 1;
+  color: var(--accent-line);
+}
+
+/* Grande o bastante para que uma citação de umas 40 palavras — o tamanho das
+   que aparecem nas aulas — encha as duas dimensões do slide, e não tão grande
+   que a linha passe de ~48 caracteres. */
+.quote-text {
+  font-family: var(--font-display);
+  font-size: calc(var(--fs-display) * 0.78);
+  line-height: 1.26;
+  font-style: italic;
+  color: var(--ink);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+/* A citação já é toda itálica, então <em> aqui marca com a cor do tema — mesma
+   regra dos títulos: uma cor de destaque só. */
+.quote-text em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.quote-author {
+  margin-top: 1.25rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-style: normal;
+  color: var(--ink-2);
+}
+
+.quote-author::before {
+  content: '— ';
+  color: var(--ink-3);
+}
+
+/* ============================================================== conteúdo */
+
+/* ----------------------------------------------------------------- define
+   Termo grande, definição em corpo generoso, pontos de apoio menores.
+   Três degraus de tamanho = três degraus de leitura. */
+
+.l-define { max-width: 42ch; }
+
+.define-term {
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-size: calc(var(--fs-title) * 1.18);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+  color: var(--ink);
+  margin: 0 0 0.9rem;
+  text-wrap: balance;
+}
+
+.define-term em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.define-body {
+  font-size: var(--fs-lead);
+  line-height: 1.5;
+  color: var(--ink);
+  padding-left: 1.1rem;
+  border-left: var(--rail) solid var(--accent);
+}
+
+.define-body em { font-style: italic; color: var(--accent); }
+
+.define-points {
+  list-style: none;
+  margin: 1.3rem 0 0;
+  padding: 0;
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+  display: grid;
+  gap: 0.42rem;
+}
+
+.define-points li {
+  position: relative;
+  padding-left: 1.1rem;
+  line-height: 1.38;
+}
+
+.define-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.4rem;
+  height: 1px;
+  background: var(--line-2);
+}
+
+.define-slot:empty { display: none; }
+.define-slot { margin-top: 1.2rem; }
+
+/* ---------------------------------------------------------------- columns */
+
+.l-columns {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 2), minmax(0, 1fr));
+  gap: var(--gap-lg);
+}
+
+/* O fio entre as colunas separa sem caixa. Só entre elas — daí o :not(:first). */
+.l-columns .column:not(:first-child) {
+  padding-left: var(--gap-lg);
+  border-left: 1px solid var(--line);
+  margin-left: calc(var(--gap-lg) * -0.5);
+}
+
+.column-title {
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-size: calc(var(--fs-body) * 0.97);
+  line-height: 1.25;
+  color: var(--accent);
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.column-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+  font-size: var(--fs-small);
+  line-height: 1.38;
+  color: var(--ink);
+}
+
+.column-items li {
+  position: relative;
+  padding-left: 0.95rem;
+}
+
+.column-items li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.32rem;
+  height: 0.32rem;
+  background: var(--accent);
+  border-radius: 1px;
+}
+
+.column-body {
+  font-size: var(--fs-small);
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+/* ----------------------------------------------------------------- panels */
+
+.l-panels {
+  display: grid;
+  gap: var(--gap);
+}
+
+.panels-1 { grid-template-columns: minmax(0, 1fr); }
+.panels-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.panels-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+/* Quatro cartões em fila ficam estreitos demais para um título de duas linhas;
+   dois por dois preserva a medida de leitura. */
+.panels-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.panel-icon {
+  color: var(--accent);
+  font-size: 1.1em;
+}
+
+.panel-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+  font-size: var(--fs-small);
+  line-height: 1.38;
+  color: var(--ink-2);
+}
+
+.panel-items li {
+  position: relative;
+  padding-left: 0.9rem;
+}
+
+.panel-items li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.3rem;
+  height: 1px;
+  background: var(--line-2);
+}
+
+.panel-body {
+  font-size: var(--fs-small);
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+/* --------------------------------------------------------------------- vs
+   Dois painéis simétricos e um divisor. A simetria é o ponto: dar mais peso a
+   um lado responderia a comparação antes da turma. */
+
+.l-vs {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: var(--gap);
+  align-items: stretch;
+}
+
+.vs-side {
+  background: var(--wash);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+}
+
+.vs-title {
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-size: calc(var(--fs-body) * 1.01);
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0 0 0.8rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--line-2);
+}
+
+.vs-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+  font-size: var(--fs-small);
+  line-height: 1.38;
+  color: var(--ink);
+}
+
+.vs-items li {
+  position: relative;
+  padding-left: 0.95rem;
+}
+
+.vs-items li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.32rem;
+  height: 0.32rem;
+  background: var(--accent);
+  border-radius: 1px;
+}
+
+.vs-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vs-label {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: calc(var(--fs-body) * 1.18);
+  color: var(--accent);
+  background: var(--paper);
+  padding: 0.35rem 0.15rem;
+}
+
+/* ------------------------------------------------------------------ steps
+   O fio vertical que liga os numerais é o que transforma uma lista numerada
+   numa sequência. */
+
+.l-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.15rem;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  position: relative;
+}
+
+.step:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 1.2rem;
+  top: 2.1rem;
+  bottom: -1.15rem;
+  width: 1px;
+  background: var(--line);
+}
+
+.step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 1px solid var(--accent-line);
+  background: var(--paper);
+  font-size: calc(var(--fs-body) * 0.88);
+  color: var(--accent);
+  position: relative;
+  z-index: 1;
+}
+
+.step-text {
+  display: grid;
+  gap: 0.2rem;
+  padding-top: 0.3rem;
+}
+
+.step-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-size: calc(var(--fs-body) * 0.93);
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.step-icon { color: var(--accent); font-size: 0.95em; }
+
+.step-desc {
+  font-size: var(--fs-small);
+  line-height: 1.38;
+  color: var(--ink-2);
+}
+
+/* ----------------------------------------------------------------- agenda */
+
+.l-agenda {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+
+.agenda-item {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 1.1rem;
+  align-items: baseline;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.agenda-item:last-child { border-bottom: 0; }
+
+.agenda-num {
+  font-size: calc(var(--fs-body) * 1.18);
+  color: var(--accent-line);
+  line-height: 1;
+}
+
+.agenda-text {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.agenda-topic {
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-size: calc(var(--fs-body) * 0.99);
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.agenda-desc {
+  font-size: var(--fs-small);
+  line-height: 1.38;
+  color: var(--ink-2);
+}
+
+/* -------------------------------------------------------------- reference
+   Termo à esquerda, descrição à direita. Com vários grupos, duas colunas —
+   é uma folha de consulta, e folha de consulta se lê varrendo.
+
+   As duas colunas são GRID, não `columns`. Multi-coluna fragmenta o que está
+   dentro dela, e o que está dentro aqui é um `dl` em grid: as linhas do dl
+   caem em colunas diferentes das do termo e a folha vira sopa de letrinhas.
+   Grid não fragmenta — cada grupo fica inteiro na sua célula. */
+
+.l-reference.grouped {
+  display: grid;
+  grid-template-columns: repeat(var(--ref-cols, 2), minmax(0, 1fr));
+  column-gap: var(--gap-lg);
+  align-items: start;
+}
+
+.ref-group {
+  margin-bottom: calc(1.1rem * var(--ref-ratio, 1));
+}
+
+.ref-group-title {
+  font-size: calc(var(--fs-caption) * max(var(--ref-ratio, 1), 0.78));
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 calc(0.5rem * var(--ref-ratio, 1));
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.ref-list {
+  display: grid;
+  /* `fit-content` e não `auto`: com termos curtos (uma sigla, uma palavra) a
+     coluna continua colando no texto, como `auto` faria; com termo longo — uma
+     referência bibliográfica inteira — ela para de crescer em 38% e a descrição
+     sobra com largura de sobra em vez de sair uma palavra por linha. */
+  grid-template-columns: fit-content(38%) minmax(0, 1fr);
+  gap: calc(0.35rem * var(--ref-ratio, 1)) calc(0.9rem * var(--ref-ratio, 1));
+  margin: 0;
+  /* O corpo acompanha a densidade da folha — o layout calcula a razão. */
+  font-size: calc(var(--fs-small) * var(--ref-ratio, 1));
+  line-height: 1.4;
+}
+
+.ref-term {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  color: var(--accent);
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.ref-desc {
+  margin: 0;
+  color: var(--ink-2);
+}
+
+/* Folha densa — na prática, a bibliografia. A chave perde a coluna própria e
+   passa a correr junto da referência: guardar duas palavras custava 38% da
+   largura, e a descrição pagava a conta em altura. Com a chave flutuando, o
+   texto contorna e a folha ganha cerca de um terço de área útil, que é a
+   diferença entre caber em corpo legível e descer ao piso do <Fit>. */
+
+.l-reference.flowing .ref-list {
+  display: block;
+}
+
+.l-reference.flowing .ref-term {
+  float: left;
+  clear: left; /* chave curta com descrição curta não puxa a próxima para o lado */
+  max-width: 45%;
+  margin-right: 0.5em;
+}
+
+.l-reference.flowing .ref-desc {
+  margin: 0 0 calc(0.45rem * var(--ref-ratio, 1));
+}
+
+/* --------------------------------------------------------------- timeline
+   Régua horizontal com um marcador por evento. A distância entre marcadores é
+   sempre igual: ela conta ORDEM, não duração — para duração o honesto é um
+   gráfico. */
+
+.l-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr));
+  gap: var(--gap);
+  position: relative;
+}
+
+.l-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2.15rem;
+  height: 1px;
+  background: var(--line);
+}
+
+.tl-event {
+  display: grid;
+  gap: 0.3rem;
+  padding-right: 0.75rem;
+}
+
+.tl-date {
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-variant-numeric: lining-nums;
+}
+
+.tl-dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--accent);
+  margin: 0.35rem 0 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.tl-title {
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-size: calc(var(--fs-body) * 0.88);
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.tl-desc {
+  font-size: var(--fs-small);
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+/* ------------------------------------------------------------------ stats */
+
+.l-stats {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr));
+  gap: var(--gap-lg);
+  align-items: start;
+}
+
+/* Fio separando os números, no mesmo espírito das colunas. */
+.l-stats > .stat:not(:first-child) {
+  padding-left: var(--gap-lg);
+  border-left: 1px solid var(--line);
+  margin-left: calc(var(--gap-lg) * -0.5);
+}
+
+/* ----------------------------------------------------------------- metric */
+
+.l-metric {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--gap-lg);
+  align-items: center;
+}
+
+.metric-figure {
+  font-size: calc(var(--fs-mega) * 1.35);
+  line-height: 0.86;
+}
+
+/* Sem medida própria: a coluna do grid já limita a largura, e um `max-width` em
+   `ch` aqui mediria a fonte do corpo, não a do rótulo — o mesmo erro que
+   estreitava o título do `lead`. */
+.metric-context { min-width: 0; }
+
+.metric-label {
+  font-size: var(--fs-lead);
+  line-height: 1.4;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.metric-label em { font-style: italic; color: var(--accent); }
+
+/* ------------------------------------------------------------------- fact */
+
+.l-fact { text-align: center; }
+
+.l-fact .kicker { justify-content: center; }
+
+.fact-figure {
+  font-size: calc(var(--fs-mega) * 1.9);
+  line-height: 0.88;
+}
+
+.fact-label {
+  margin-top: 0.9rem;
+  font-size: var(--fs-lead);
+  color: var(--ink-2);
+  max-width: 26ch;
+  margin-inline: auto;
+}
+
+/* ---------------------------------------------------------------- feature */
+
+.l-feature {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr));
+  gap: var(--gap-lg) var(--gap);
+}
+
+.feature-icon {
+  font-size: calc(var(--fs-body) * 1.26);
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.feature-title {
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-size: calc(var(--fs-body) * 0.93);
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0 0 0.3rem;
+}
+
+.feature-desc {
+  font-size: var(--fs-small);
+  line-height: 1.38;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+/* ------------------------------------------------------------------ chart */
+
+.l-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 0;
+  height: 100%;
+}
+
+.chart-note {
+  font-size: var(--fs-caption);
+  line-height: 1.38;
+  color: var(--ink-2);
+  margin: 0;
+  padding-left: 0.85rem;
+  border-left: 2px solid var(--line-2);
+  max-width: var(--measure);
+}
+
+/* ---------------------------------------------------------------- diagram
+   Palco emoldurado. O Mermaid é dimensionado para caber sem barra de rolagem —
+   um diagrama que rola numa projeção é um diagrama que ninguém vê inteiro. */
+
+.l-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 0;
+  height: 100%;
+}
+
+.diagram-stage {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--wash);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+  overflow: hidden;
+}
+
+/* O host do Mermaid é um elemento comum (o SVG é que está no shadow root), então
+   ele se dimensiona por CSS normal. Mandá-lo ocupar o palco inteiro é metade do
+   trabalho de escala; a outra metade — soltar o `max-width` do SVG lá dentro —
+   está em layouts/diagram.vue. */
+.diagram-stage > * {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diagram-stage svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.diagram-note {
+  font-size: var(--fs-caption);
+  line-height: 1.38;
+  color: var(--ink-2);
+  margin: 0;
+  padding-left: 0.85rem;
+  border-left: 2px solid var(--line-2);
+  max-width: var(--measure);
+}
+
+/* Entrada em cascata do `build:`. Auto-temporizada, e inerte na impressão
+   (a regra de @media print em base.css desliga .reveal; aqui garantimos que o
+   palco também não fique meio transparente no PDF). */
+.l-diagram.is-build .diagram-stage {
+  animation: fasm-in 700ms var(--motion-ease) both;
+}
+
+@media print {
+  .l-diagram.is-build .diagram-stage { animation: none !important; }
+}
+
+/* ---------------------------------------------------------------- compare */
+
+.l-compare {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-small);
+}
+
+.l-compare th,
+.l-compare td {
+  text-align: left;
+  padding: 0.5rem 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.l-compare th {
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  border-bottom: 1px solid var(--line-2);
+}
+
+.cmp-metric { font-weight: 650; color: var(--ink); }
+.cmp-before { color: var(--ink-3); }
+.cmp-after { color: var(--ink); font-weight: 650; }
+
+.cmp-delta {
+  color: var(--accent);
+  font-weight: 650;
+  font-variant-numeric: lining-nums tabular-nums;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- two-cols */
+
+.l-two-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap-lg);
+  align-items: start;
+}
+
+.l-two-cols .copy { max-width: none; }
+
+/* ------------------------------------------------------------------ image */
+
+.l-image {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--gap-lg);
+  align-items: center;
+  min-height: 0;
+  height: 100%;
+}
+
+.l-image.img-left .image-text { order: 2; }
+.l-image.img-left .image-media { order: 1; }
+
+.image-text { min-height: 0; }
+
+.image-media {
+  min-height: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-media img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+/* --------------------------------------------------------------- showcase
+   Proporção fixa 43/57 — determinística, para que dois slides showcase
+   seguidos não "pulem" de largura. */
+
+.l-showcase {
+  display: grid;
+  grid-template-columns: 43fr 57fr;
+  gap: var(--gap-lg);
+  align-items: center;
+  height: 100%;
+}
+
+.l-showcase.show-left { grid-template-columns: 57fr 43fr; }
+.l-showcase.show-left .showcase-text { order: 2; }
+.l-showcase.show-left .showcase-media { order: 1; }
+
+.showcase-text { min-height: 0; }
+
+.showcase-media {
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+}
+
+.showcase-media img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+/* ------------------------------------------------------------------ bleed */
+
+.l-bleed { padding: var(--pad-y) var(--pad-x); }
+
+.bleed-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+/* Duotone: dessatura e puxa para o azul do tema. Resolve de uma vez o ruído de
+   uma foto colorida atrás de texto. */
+.bleed-image.duotone {
+  filter: grayscale(1) contrast(1.05);
+}
+
+.bleed-image.duotone::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  mix-blend-mode: color;
+  opacity: 0.55;
+}
+
+/* O véu não é opcional: sem ele a legibilidade do título passa a depender da
+   foto que o autor escolheu. */
+.bleed-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--paper) 94%, transparent) 0%,
+    color-mix(in srgb, var(--paper) 86%, transparent) 55%,
+    color-mix(in srgb, var(--paper) 62%, transparent) 100%
+  );
+  z-index: 0;
+}
+
+.l-bleed .frame-body { justify-content: center; }
+
+.bleed-stat {
+  font-size: calc(var(--fs-mega) * 1.1);
+  line-height: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+/* ------------------------------------------------------------------ embed */
+
+.l-embed {
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.embed-frame {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--wash);
+}
+
+/* ------------------------------------------------------------------ logos */
+
+.l-logos {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr));
+  gap: var(--gap);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--wash);
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+}
+
+.logo-icon { color: var(--accent); font-size: 1.15em; }
+
+/* ------------------------------------------------------- code / code-explain */
+
+.l-code { height: 100%; min-height: 0; }
+
+.l-code-explain {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: var(--gap-lg);
+  align-items: start;
+  min-height: 0;
+}
+
+.ce-code { min-width: 0; }
+
+.ce-notes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+  font-size: var(--fs-small);
+  line-height: 1.38;
+}
+
+.ce-note {
+  display: grid;
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+  gap: 0.6rem;
+  color: var(--ink);
+  transition: opacity var(--motion-dur) var(--motion-ease);
+}
+
+/* No modo passo a passo, a nota da vez acende e as outras apagam — mas
+   continuam visíveis, para que a turma veja onde está na sequência. */
+.ce-note.dim { opacity: 0.34; }
+
+.ce-num {
+  font-size: calc(var(--fs-body) * 0.8);
+  color: var(--accent);
+  line-height: 1.5;
+}
+
+@media print {
+  .ce-note.dim { opacity: 1; }
+}
